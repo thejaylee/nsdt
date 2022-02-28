@@ -33,10 +33,10 @@ def list_interfaces():
 
 class Args():
     def __init__(self, argv: List):
-        self.parser = parser = ArgumentParser(description='NetGear Switch Discoverer')
+        self.parser = parser = ArgumentParser(description='NetGear Switch Discovery Tool')
         parser.add_argument('-l', action='store_true', help='list interfaces', dest='list_interfaces')
         parser.add_argument('-i', help='interface to use', type=int, metavar='<num>', dest='interface_num')
-        parser.add_argument('-t', help='list of message types to interrogate', type=__class__.hex, metavar=('<hex>', 'hex'), nargs='+', dest='message_types')
+        parser.add_argument('-t', help='message types to interrogate', type=__class__.hex, metavar=('<hex>', 'hex'), nargs='+', dest='message_types')
         parser.add_argument('--list-message-types', action='store_true', help='list message types', dest='list_message_types')
         self._parsed = parser.parse_args(argv)
 
